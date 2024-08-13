@@ -13,7 +13,6 @@ async def extract_lotus_receipt_information(text):
         "item1": "บริษัท เอก-ชัย ดีสทริบิวชั่น ซิสเทม จำกัด"
     })
 
-    
     #กำหนด pattern สำหรับเก็บข้อมูล
     result.append({
         "item1": "จำนวน",
@@ -31,13 +30,10 @@ async def extract_lotus_receipt_information(text):
         over = "" #สำหรับเก็บข้อมูลที่เกินของรายการสินค้าในเเถวนั้นๆออกมา
         product_name = "" #ประกาศตัวเเปรสำหรับสร้างรายการสินค้าที่มีการ join ข้อมูลใน List
         
-
         if re.compile(r'\d+.\d+\s+V$').search(text[index]):
 
- 
             words = text[index].split() #เเบ่งข้อความตามการเว้นวรรค
             print(words)
-
 
             count = 1 #สำหรับนับจำนวนของบรรทัดที่จะบวกไปหาข้อมูลที่เกินของรายการสินค้าในเเถวนั้นๆ
             while True: 
@@ -54,7 +50,6 @@ async def extract_lotus_receipt_information(text):
             else: #กรณีที่ไม่มีข้อความเกินจนขึ้นบรรทัดใหม่
                 print("กรณีที่ไม่มีข้อความเกินจนขึ้นบรรทัดใหม่")
                 product_name = " ".join(words[1:-4]) #เพิ่มรายการสินค้า, การ join หมายความว่านำข้อมูลใน List มารวมกันเเละเเทนที่ช่องที่ต่อกันด้วย " " หรือจะใส่ "-"
-
 
             result.append({
                 "item1": words[-4], #เพิ่มจำนวน
@@ -74,7 +69,6 @@ async def extract_lotus_receipt_information(text):
 
             break #ถ้าวนลูปจนถึงเเถวที่ไม่ต้องการ ทำการหยุดลูป
 
-    
     #เพิ่มข้อมูล ยอดเงินชำระ
     result.append({
         "item1": "ยอดเงินชำระ",

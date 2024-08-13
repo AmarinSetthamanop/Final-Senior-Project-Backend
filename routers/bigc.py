@@ -13,7 +13,6 @@ async def extract_bigc_receipt_information(text):
         "item1": "บริษัท บิ๊กซี ซูเปอร์เซ็นเตอร์ จำกัด (มหาชน)"
     })
 
-    
     #กำหนด pattern สำหรับเก็บข้อมูล
     result.append({
         "item1": "จำนวน",
@@ -69,7 +68,6 @@ async def extract_bigc_receipt_information(text):
 
             break #ถ้าวนลูปจนถึงเเถวที่ไม่ต้องการ ทำการหยุดลูป
 
-    
     #เพิ่มข้อมูล ยอดเงินชำระ
     result.append({
         "item1": "ยอดเงินชำระ",

@@ -26,9 +26,16 @@ async def extract_receipt_information(file: UploadFile):
 
     bin_img = preprocessing(contents)
 
-
     text = pytesseract.image_to_string(bin_img, lang='tha+eng', config='--psm 6') #เเปลงรูปภาพใบเสร็จไปเป็น text
     print(text)
+ุึี
+
+
+
+
+
+
+
 
     if re.search(makro_pattern, text):
         print('Hello makro !!')
