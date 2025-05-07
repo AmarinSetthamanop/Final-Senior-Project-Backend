@@ -27,8 +27,8 @@ def preprocessing(contents):
 
 def scan_detection(blur, imRGB):
 
-    image_path = '..\\uploads\\scan_detection.jpg' # สำหรับทำงานใน Docker เพราะ Work Dir ชื่อ /app ดังนั้นใช้ .. เพื่อออกจาก dir app
-    # image_path = '.\\uploads\\scan_detection.jpg' # สำหรับทำงานในเครื่อง local
+    # image_path = '..\\uploads\\scan_detection.jpg' # สำหรับทำงานใน Docker เพราะ Work Dir ชื่อ /app ดังนั้นใช้ .. เพื่อออกจาก dir app
+    image_path = '.\\uploads\\scan_detection.jpg' # สำหรับทำงานในเครื่อง local
 
     height = imRGB.shape[0]
     width = imRGB.shape[1]
@@ -96,7 +96,7 @@ def image_smoothening(image_path):
 
     thresh = thresh[10:thresh.shape[0] - 10, 10:thresh.shape[1] - 10]
 
-    cv2.imwrite('..//uploads//thresh.jpg', thresh) # สำหรับทำงานใน Docker เพราะ Work Dir ชื่อ /app ดังนั้นใช้ .. เพื่อออกจาก dir app
-    # cv2.imwrite('.//uploads//thresh.jpg', thresh) # สำหรับทำงานในเครื่อง local
+    # cv2.imwrite('..//uploads//thresh.jpg', thresh) # สำหรับทำงานใน Docker เพราะ Work Dir ชื่อ /app ดังนั้นใช้ .. เพื่อออกจาก dir app
+    cv2.imwrite('.//uploads//thresh.jpg', thresh) # สำหรับทำงานในเครื่อง local
 
     return thresh

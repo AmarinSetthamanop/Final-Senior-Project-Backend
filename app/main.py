@@ -41,8 +41,8 @@ def testApi():
 @app.post("/write/excel")
 async def write_excel(receipt_data: Request):
 
-    file_path = "..\\write-file\\receipt.xlsx" # สำหรับทำงานใน Docker เพราะ Work Dir ชื่อ /app ดังนั้นใช้ .. เพื่อออกจาก dir app
-    # file_path = ".\\write-file\\receipt.xlsx" # สำหรับทำงานในเครื่อง local
+    # file_path = "..\\write-file\\receipt.xlsx" # สำหรับทำงานใน Docker เพราะ Work Dir ชื่อ /app ดังนั้นใช้ .. เพื่อออกจาก dir app
+    file_path = ".\\write-file\\receipt.xlsx" # สำหรับทำงานในเครื่อง local
 
     try:
         
